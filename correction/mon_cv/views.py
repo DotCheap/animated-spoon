@@ -12,5 +12,5 @@ def index(request):
     context = {
         "a" : a
     }
-    print(a)
+    context['b'] = a
     return HttpResponse(template.render(context, request))

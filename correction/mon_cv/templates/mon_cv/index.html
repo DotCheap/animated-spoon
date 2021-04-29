@@ -1,1 +1,5 @@
 {{ a }}
+
+{% for o in a %}
+    <p> {{ o.title }} - {{ o.cat_id.category }}</p>
+{% endfor %}
