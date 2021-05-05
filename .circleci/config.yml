@@ -9,8 +9,6 @@ jobs:
     steps:
       - checkout:
           path: ~/project
-      - run:
-          command: cd nodejs
       - node/install-packages:
           pkg-manager: yarn
       - run:
