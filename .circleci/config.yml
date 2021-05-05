@@ -1,9 +1,9 @@
-version: 2.1
-orbs:
-  node: circleci/node@3.0.0
-workflows:
-  node-tests:
+build-and-test:
+    docker:
+        - image: node
     steps:
-      - run : cd nodejs
-    jobs:
-      - node/test
+        - checkout
+        - run : cd nodejs
+        - node/install-packages:
+            pkg-manager: npm      
+        - run: npm run test.js
