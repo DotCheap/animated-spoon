@@ -12,6 +12,12 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
+          name: Start Server
+          command: yarn run start
+      - run:
+          name: Await
+          command: dockerize -wait http://localhost:3000 -timeout 1m
+      - run:
           command: yarn run test
           name: Run YARN tests
 workflows:
