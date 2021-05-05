@@ -13,7 +13,8 @@ jobs:
           pkg-manager: yarn
       - run:
           name: Start Server
-          command: node App.js &
+          command: node App.js
+          background: true 
       - run:
           command: yarn run test
           name: Run YARN tests
