@@ -3,10 +3,12 @@ orbs:
   node: circleci/node@4.3
 jobs:
   build:
+    working_directory: ~/project/nodejs
     docker:
         - image: cimg/node:16.1.0
     steps:
-      - checkout
+      - checkout:
+          path: ~/project
       - run:
           command: cd nodejs
       - node/install-packages:
