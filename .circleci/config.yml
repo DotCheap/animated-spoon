@@ -3,5 +3,7 @@ orbs:
   node: circleci/node@3.0.0
 workflows:
   node-tests:
+    steps:
+      - run : cd nodejs
     jobs:
       - node/test
